@@ -2,7 +2,7 @@
 ## Overview
 A little command line tool written in java to help handling of logic formulas. 
 The current version includes a parser for clause sets, a truth-table generator 
-and a David-Putnam SAT-Solver.
+and a Davis-Putnam SAT-Solver.
 
 ## Motivation
 The development of the tool was inspired by the CS course "Logic and Formal Systems" I am attending as a student at Leibiz University of Hannover (LUH).
