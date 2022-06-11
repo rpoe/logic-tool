@@ -31,5 +31,48 @@ The tool understands the following commands:
 * dpsat <identifier>  - invoke the Davis-Putnam SAT Solver on the specified formula
 * q  - quit the tool
 
+## Usage Example
+
+    Welcome to LOGIC ! (Version 0.0.1)
+    > ls
+    total 0 symbols
+    > def phi {{q4,~q2},{~q4,q1},{q3,q2},{~q4,~q1},{~q3,q2}}
+    > ls
+    phi={{q4,~q2},{~q4,q1},{q3,q2},{~q4,~q1},{~q3,q2}}
+    total 1 symbols
+    > tt phi
+        q4     q2     q1     q3 result
+    -----------------------------------
+       0      0      0      0      0   
+       1      0      0      0      0   
+       0      1      0      0      0   
+       1      1      0      0      0   
+       0      0      1      0      0   
+       1      0      1      0      0   
+       0      1      1      0      0   
+       1      1      1      0      0   
+       0      0      0      1      0   
+       1      0      0      1      0   
+       0      1      0      1      0   
+       1      1      0      1      0   
+       0      0      1      1      0   
+       1      0      1      1      0   
+       0      1      1      1      0   
+       1      1      1      1      0   
+    -----------------------------------
+    > dpsat phi
+    DPSat1 iteration 0: {{q4,~q2},{~q4,q1},{q3,q2},{~q4,~q1},{~q3,q2}}
+    resolve {~q4,q1},{~q4,~q1} using q1 -> {~q4}
+    DPSat1 iteration 1: {{q4,~q2},{q3,q2},{~q3,q2},{~q4}}
+    resolve {q4,~q2},{q3,q2} using ~q2 -> {q4,q3}
+    resolve {q4,~q2},{~q3,q2} using ~q2 -> {q4,~q3}
+    DPSat1 iteration 2: {{~q4},{q4,q3},{q4,~q3}}
+    resolve {q4,q3},{q4,~q3} using q3 -> {q4}
+    DPSat1 iteration 3: {{~q4},{q4}}
+    resolve {~q4},{q4} using ~q4 -> {}
+    DPSat1 iteration 4: {{}}
+    set contains empty clause: {{}}
+    result=false
+    > 
 
 
