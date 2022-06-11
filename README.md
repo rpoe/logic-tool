@@ -25,10 +25,10 @@ Invoke the tool with
 You get a prompt of the tools CLI.
 
 The tool understands the following commands:
-* def <identifier> <formula>   - define a formula and store it as global symbol
+* def \<identifier> \<formula>   - define a formula and store it as global symbol
 * ls   - list all global symbols 
-* tt <identifier>   - produce a truth table dump of specified formula
-* dpsat <identifier>  - invoke the Davis-Putnam SAT Solver on the specified formula
+* tt \<identifier>   - produce a truth table dump of specified formula
+* dpsat \<identifier>  - invoke the Davis-Putnam SAT Solver on the specified formula
 * q  - quit the tool
 
 ## Usage Example
