@@ -19,8 +19,11 @@ Change to the top level directory and execute the build.sh script.
 
 ## Using the tool
 Invoke the tool with
+
     java logic/Main
+
 You get a prompt of the tools CLI.
+
 The tool understands the following commands:
 * def <identifier> <formula>   - define a formula and store it as global symbol
 * ls   - list all global symbols 
