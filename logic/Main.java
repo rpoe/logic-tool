@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class Main {
   
   /** version number */
-  static final String version_str = "0.0.1";
+  static final String version_str = "0.0.2";
 
   /** The main method of the program
    * 
@@ -169,7 +169,7 @@ public class Main {
             }
             sym = symtab.lookup(cmds[1]);
             if (sym != null) {
-              boolean res = DPSat.DPSat1(sym.form().clauseSet);
+              boolean res = DPSat.DPSat1(sym.form().clauseSet());
               System.out.println("result="+res);
             }
             else System.out.format ("Symbol %s not found\n", cmds[1]);  

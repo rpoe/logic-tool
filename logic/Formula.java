@@ -16,6 +16,9 @@ public class Formula {
   /** Clause Set*/
   ClauseSet clauseSet;
 
+  /** Getter for clauseSet */
+  ClauseSet clauseSet() { return this.clauseSet; }
+  
   /** The constructor
    * 
    * Creates an empty Formula instance

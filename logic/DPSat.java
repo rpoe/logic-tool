@@ -2,7 +2,16 @@ package logic;
 
 import java.util.Iterator;
 
-class DPSat
+/**
+ * Class implementing the Davis-Putnam SAT Solver algorithm
+ * for the Logic project.
+ * 
+ * This class just contains a static function of the SAT solver
+ *
+ * @author Peter Sager
+ * @version 2022 June 12
+ */
+public class DPSat
 {
   static final int MAXITERATIONS=32;
 

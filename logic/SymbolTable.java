@@ -66,7 +66,7 @@ public class SymbolTable {
     return null;
   }
 
-  void add(String name, Formula form)
+  public void add(String name, Formula form)
   throws Exception {
     if (lookup(name)!= null) {
       throw new Exception ("Formula "+name+" exists");
@@ -75,7 +75,7 @@ public class SymbolTable {
     table.add(sym);
   }
 
-  void add(Literal lit)
+  public void add(Literal lit)
   throws Exception {
     if (lookup(lit.name())!= null) {
       throw new Exception ("Variable "+lit.name()+" exists");
