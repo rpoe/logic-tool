@@ -30,81 +30,6 @@ public class Main {
   public static void main(String[] args) {
     System.out.println ("Welcome to LOGIC ! (Version "+version_str+")");
 
-    /*    
-    try {
-    // test Literal
-    Literal l1 = new Literal("p1", false);
-    System.out.println ("l1="+l1.toString());
-
-    // test Clause
-    Clause c1 = new Clause();
-    c1.add (new Literal("p1", false));
-    c1.add (new Literal("p2", true));
-    c1.add (new Literal("p3", false));
-    c1.add (new Literal("p4", true));
-    System.out.println ("c1="+c1.toString());
-    Clause c2 = new Clause();
-    c2.add (new Literal("p1", true));
-    c2.add (new Literal("p2", false));
-    c2.add (new Literal("p3", true));
-    c2.add (new Literal("p4", true));
-    System.out.println ("c2="+c2.toString());    
-
-    // test Clause.filter
-    Clause cf = c1.filter(new Literal("p2",true));
-    System.out.println ("cf=c1\\~p2="+cf.toString());  
-    
-    // test ClauseSet
-    ClauseSet cs1 = new ClauseSet();
-    cs1.add (c1);
-    cs1.add(c2);
-    System.out.println ("cs1="+cs1.toString());
-
-    // Test ClauseSet parser
-    ClauseSet cs2 = new ClauseSet();
-    if (ClauseSet.parse("{{q4,~q2},{~q4,q1},{q3,q2},{~q4,~q1},{~q3,q2}}", cs2) <= 0)
-      System.out.println ("Clause parse error");
-    System.out.println ("cs2="+cs2.toString());
-
-    ClauseSet cs3 = new ClauseSet();
-    if (ClauseSet.parse(
-      "{{x1,~x5,x8},{x3},{~x1,x8,x4},{~x5,x2,x6},{x5,x4,~x2,x6},{~x5,x8,~x7},{~x8},{x1,x5,~x2},{~x4},{x5,~x2,x8}}", cs3) <= 0)
-      System.out.println ("Clause parse error");
-    System.out.println ("cs3="+cs3.toString());
-
-    ClauseSet cs4 = new ClauseSet();
-    if (ClauseSet.parse(
-      "{{~p2,~p4},{~p5},{p1,p2,p3},{~p1,p5},{p4},{p1,p2,~p3}}", cs4) <= 0)
-      System.out.println ("Clause parse error");
-    System.out.println ("cs4="+cs4.toString());
-
-    // test Model
-
-    Model m = new Model();
-    m.add("p1",1);
-    m.add("p2",0);
-    m.add("p3",1);
-    m.add("p4",1);
-    System.out.println ("Model:"+m.toString());
-    System.out.println("c1.eval="+c1.eval(m));
-    System.out.println("c2.eval="+c2.eval(m));
-    System.out.println("cs1.eval="+cs1.eval(m));
-
-    // test Literal Stats
-    LitStat ls = new LitStat();
-    ls.add(cs4);
-    System.out.println (ls.toString());
-
-    // test DPSat
-    boolean res = DPSat.DPSat1(cs4);
-    System.out.println("result="+res);
-    }
-    catch(Exception e) {
-      System.out.println ("Exception: "+e.toString());
-    }
-    */
-    
-
     // Create the global symbol table for formulas
     SymbolTable symtab = new SymbolTable();
 
@@ -194,4 +119,81 @@ public class Main {
 
   }
 
+  static void tests () {
+
+  /*    
+    try {
+    // test Literal
+    Literal l1 = new Literal("p1", false);
+    System.out.println ("l1="+l1.toString());
+
+    // test Clause
+    Clause c1 = new Clause();
+    c1.add (new Literal("p1", false));
+    c1.add (new Literal("p2", true));
+    c1.add (new Literal("p3", false));
+    c1.add (new Literal("p4", true));
+    System.out.println ("c1="+c1.toString());
+    Clause c2 = new Clause();
+    c2.add (new Literal("p1", true));
+    c2.add (new Literal("p2", false));
+    c2.add (new Literal("p3", true));
+    c2.add (new Literal("p4", true));
+    System.out.println ("c2="+c2.toString());    
+
+    // test Clause.filter
+    Clause cf = c1.filter(new Literal("p2",true));
+    System.out.println ("cf=c1\\~p2="+cf.toString());  
+    
+    // test ClauseSet
+    ClauseSet cs1 = new ClauseSet();
+    cs1.add (c1);
+    cs1.add(c2);
+    System.out.println ("cs1="+cs1.toString());
+
+    // Test ClauseSet parser
+    ClauseSet cs2 = new ClauseSet();
+    if (ClauseSet.parse("{{q4,~q2},{~q4,q1},{q3,q2},{~q4,~q1},{~q3,q2}}", cs2) <= 0)
+      System.out.println ("Clause parse error");
+    System.out.println ("cs2="+cs2.toString());
+
+    ClauseSet cs3 = new ClauseSet();
+    if (ClauseSet.parse(
+      "{{x1,~x5,x8},{x3},{~x1,x8,x4},{~x5,x2,x6},{x5,x4,~x2,x6},{~x5,x8,~x7},{~x8},{x1,x5,~x2},{~x4},{x5,~x2,x8}}", cs3) <= 0)
+      System.out.println ("Clause parse error");
+    System.out.println ("cs3="+cs3.toString());
+
+    ClauseSet cs4 = new ClauseSet();
+    if (ClauseSet.parse(
+      "{{~p2,~p4},{~p5},{p1,p2,p3},{~p1,p5},{p4},{p1,p2,~p3}}", cs4) <= 0)
+      System.out.println ("Clause parse error");
+    System.out.println ("cs4="+cs4.toString());
+
+    // test Model
+
+    Model m = new Model();
+    m.add("p1",1);
+    m.add("p2",0);
+    m.add("p3",1);
+    m.add("p4",1);
+    System.out.println ("Model:"+m.toString());
+    System.out.println("c1.eval="+c1.eval(m));
+    System.out.println("c2.eval="+c2.eval(m));
+    System.out.println("cs1.eval="+cs1.eval(m));
+
+    // test Literal Stats
+    LitStat ls = new LitStat();
+    ls.add(cs4);
+    System.out.println (ls.toString());
+
+    // test DPSat
+    boolean res = DPSat.DPSat1(cs4);
+    System.out.println("result="+res);
+    }
+    catch(Exception e) {
+      System.out.println ("Exception: "+e.toString());
+    }
+    */
+  }
+  
 }
