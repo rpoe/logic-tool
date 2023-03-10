@@ -26,6 +26,7 @@ You get a prompt of the tools CLI.
 
 The tool understands the following commands:
 * def \<identifier> \<formula>   - define a formula and store it as global symbol
+  \<formula> is to be given as array of CNF Terms ((a | b ) & c) <=> {{a,b},{c}}
 * ls   - list all global symbols 
 * tt \<identifier>   - produce a truth table dump of specified formula
 * dpsat \<identifier>  - invoke the Davis-Putnam SAT Solver on the specified formula
